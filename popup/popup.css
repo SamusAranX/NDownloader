@@ -1,0 +1,132 @@
+:root {
+	--red: #e60012;
+	--red-hover: #db0011;
+	--orange: #FE9500;
+	--blue: #007AFF;
+	--indigo: #5856D7;
+}
+
+* { box-sizing: border-box; outline: none; }
+html, body {
+	font-size: 11pt;
+}
+body {
+	display: flex;
+	flex-direction: column;
+
+	font-family: "Inter var";
+
+	margin: 0;
+	width: 350px;
+}
+
+body.dead-end div.container {
+	display: none;
+}
+body.dead-end div.container.message {
+	display: block !important;
+}
+
+div.container.message.error {
+	background: var(--blue);
+	color: white;
+	font-weight: bold;
+}
+
+body.empty div.info ~ * {
+	display: none !important;
+}
+
+header {
+	background: var(--red);
+	height: 44px;
+	width: 100%;
+	padding: 5px;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.33rem;
+}
+header img.icon {
+	height: 32px;
+}
+
+header .title {
+	display: flex;
+	align-items: baseline;
+	gap: inherit;
+
+	color: #fff;
+	margin: 0 0 0 0.25em;
+}
+header h1, header h2 {
+	margin: 0;
+}
+header h1 {
+	font-size: 1.6rem;
+}
+header h2 {
+	font-size: 1rem;
+}
+
+p {
+	margin: 0;
+}
+
+div.container.message {
+	display: none;
+
+	font-weight: bold;
+	padding: 5px;
+	width: 100%;
+}
+
+div.container,
+div.container div.info {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 5px;
+}
+div.container {
+	padding: 5px;
+}
+
+#url-list {
+	border-width: 1px;
+
+	font-family: inherit;
+	width: 100%;
+
+	padding: 0.5em;
+
+	overflow: auto;
+}
+#url-list option {
+	font-weight: bold;
+}
+
+#button-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#button-bar button {
+	flex: 1 0 0;
+
+	background: var(--red);
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	font-family: inherit;
+	font-weight: 600;
+
+	padding: 5px;
+}
+#button-bar button:hover {
+	background: var(--red-hover);
+}
+#button-bar button:not(:first-child) {
+	margin-left: 5px;
+}
